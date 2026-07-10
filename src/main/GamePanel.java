@@ -25,10 +25,6 @@ public class GamePanel extends JPanel implements Runnable{
     Thread gameThread;
     Player player = new Player(this, keyH);
 
-    double playerX = 100;
-    double playerY = 100;
-    double playerSpeed = 4;
-
 
     public GamePanel() {
 
@@ -78,6 +74,7 @@ public class GamePanel extends JPanel implements Runnable{
         
     }
 
+    @Override
     public void paintComponent(Graphics g) {
 
         super.paintComponent(g);

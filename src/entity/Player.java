@@ -21,7 +21,7 @@ public class Player extends Entity{
         getPlayerImage();
     }
 
-    public void setDefaultValues() {
+    public final void setDefaultValues() {
 
         x = 100;
         y = 100;
@@ -29,7 +29,8 @@ public class Player extends Entity{
         direction = "down";
     }
 
-    public void getPlayerImage() {
+    @SuppressWarnings("CallToPrintStackTrace")
+    public final void getPlayerImage() {
 
         try {
 
@@ -110,70 +111,38 @@ public class Player extends Entity{
         BufferedImage image = null;
 
         switch(direction) {
-            case "up":
+            case "up" -> {
                 switch(spriteNum) {
-                    case 1:
-                        image = up1;
-                        break;
-                    case 2:
-                        image = up2;
-                        break;
-                    case 3:
-                        image = up3;
-                        break;
-                    case 4:
-                        image = up4;
-                        break;
+                    case 1 -> image = up1;
+                    case 2 -> image = up2;
+                    case 3 -> image = up3;
+                    case 4 -> image = up4;
                 }
-                break;
-            case "down":
+            }
+            case "down" -> {
                 switch(spriteNum) {
-                    case 1:
-                        image = down1;
-                        break;
-                    case 2:
-                        image = down2;
-                        break;
-                    case 3:
-                        image = down3;
-                        break;
-                    case 4:
-                        image = down4;
-                        break;
+                    case 1 -> image = down1;
+                    case 2 -> image = down2;
+                    case 3 -> image = down3;
+                    case 4 -> image = down4;
                 }
-                break;
-            case "left":
+            }
+            case "left" -> {
                 switch(spriteNum) {
-                    case 1:
-                        image = left1;
-                        break;
-                    case 2:
-                        image = left2;
-                        break;
-                    case 3:
-                        image = left3;
-                        break;
-                    case 4:
-                        image = left4;
-                        break;
+                    case 1 -> image = left1;
+                    case 2 -> image = left2;
+                    case 3 -> image = left3;
+                    case 4 -> image = left4;
                 }
-                break;
-            case "right":
+            }
+            case "right" -> {
                 switch(spriteNum) {
-                    case 1:
-                        image = right1;
-                        break;
-                    case 2:
-                        image = right2;
-                        break;
-                    case 3:
-                        image = right3;
-                        break;
-                    case 4:
-                        image = right4;
-                        break;
+                    case 1 -> image = right1;
+                    case 2 -> image = right2;
+                    case 3 -> image = right3;
+                    case 4 -> image = right4;
                 }
-                break;
+            }
         }
         g2.drawImage(image, (int)x, (int)y, gp.tileSize, gp.tileSize, null);
         
